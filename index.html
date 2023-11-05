@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .left-pane {
+      width: 20%;
+      height: 100vh;
+      background-color: #f2f2f2;
+      border-right: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-header {
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .plus-icon, .new-chat, .close-sidebar {
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .new-chat {
+      width: 70%;
+    }
+
+    .close-sidebar {
+      width: 20%;
+    }
+
+    .list-of-chat-items {
+      flex: 1;
+      overflow-y: auto;
+      width: 100%;
+    }
+
+    .chat-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .chat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin-right: 10px;
+    }
+
+    .chat-title {
+      flex: 1;
+    }
+
+    .profile-section {
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .upgrade-plan, .profile-details {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .upgrade-icon, .more-options {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-pane">
+    <div class="top-header">
+      <div class="plus-icon">
+        <svg fill="none" class="icon-sm shrink-0" viewBox="0 0 16 16">
+          <path d="m5.854 5.735.692-2.074a.479.479 0 0 1 .908 0l.692 2.074a3.35 3.35 0 0 0 2.119 2.12l2.074.69a.479.479 0 0 1 0 .91l-2.074.69a3.35 3.35 0 0 0-2.12 2.12l-.691 2.074a.479.479 0 0 1-.908 0l-.692-2.074a3.35 3.35 0 0 0-2.119-2.12l-2.074-.69a.479.479 0 0 1 0-.91l2.074-.69a3.35 3.35 0 0 0 2.12-2.12ZM11.46 2.464l.326-.977a.225.225 0 0 1 .428 0l.325.977c.157.47.527.84.997.997l.977.325a.225.225 0 0 1 0 .428l-.977.325c-.47.157-.84.527-.997.997l-.325.977a.225.225 0 0 1-.428 0l-.325-.977a1.577 1.577 0 0 0-.998-.997l-.976-.325a.225.225 0 0 1 0-.428l.976-.325c.471-.157.84-.527.998-.997Z" fill="currentColor"></path>
+        </svg>
+      </div>
+      <div class="new-chat">New Chat</div>
+      <div class="close-sidebar">X</div>
+    </div>
+    <div class="list-of-chat-items">
+      <div class="chat-item">
+        <div class="chat-icon"></div>
+        <div class="chat-title">Chat 1</div>
+      </div>
+      <div class="chat-item">
+        <div class="chat-icon"></div>
+        <div class="chat-title">Chat 2</div>
+      </div>
+      <!-- Add more chat items here -->
+    </div>
+    <div class="profile-section">
+      <div class="upgrade-plan">
+        <div class="upgrade-icon">
+          <svg fill="none" class="icon-sm shrink-0" viewBox="0 0 16 16">
+            <path d="m5.854 5.735.692-2.074a.479.479 0 0 1 .908 0l.692 2.074a3.35 3.35 0 0 0 2.119 2.12l2.074.69a.479.479 0 0 1 0 .91l-2.074.69a3.35 3.35 0 0 0-2.12 2.12l-.691 2.074a.479.479 0 0 1-.908 0l-.692-2.074a3.35 3.35 0 0 0-2.119-2.12l-2.074-.69a.479.479 0 0 1 0-.91l2.074-.69a3.35 3.35 0 0 0 2.12-2.12ZM11.46 2.464l.326-.977a.225.225 0 0 1 .428 0l.325.977c.157.47.527.84.997.997l.977.325a.225.225 0 0 1 0 .428l-.977.325c-.47.157-.84.527-.997.997l-.325.977a.225.225 0 0 1-.428 0l-.325-.977a1.577 1.577 0 0 0-.998-.997l-.976-.325a.225.225 0 0 1 0-.428l.976-.325c.471-.157.84-.527.998-.997Z" fill="currentColor"></path>
+          </svg>
+        </div>
+        <div class="upgrade-label">Upgrade Plan</div>
+      </div>
+      <div class="profile-details">
+        <!-- ... Rest of the profile details ... -->
+      </div>
+    </div>
+  </div>
+  <div class="right-pane">
+    <!-- Right pane content goes here -->
+  </div>
+</body>
+</html>
