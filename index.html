@@ -1,155 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat App</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .left-pane {
-      width: 20%;
-      height: 100vh;
-      background-color: #f2f2f2;
-      border-right: 1px solid #ccc;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .top-header {
-      width: 100%;
-      padding: 10px;
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-    }
-
-    .plus-icon, .new-chat, .close-sidebar {
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    .new-chat {
-      width: 70%;
-    }
-
-    .close-sidebar {
-      width: 20%;
-    }
-
-    .list-of-chat-items {
-      flex: 1;
-      overflow-y: auto;
-      width: 100%;
-    }
-
-    .chat-item {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-      cursor: pointer;
-    }
-
-    .chat-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #ccc;
-      margin-right: 10px;
-    }
-
-    .chat-title {
-      flex: 1;
-    }
-
-    .profile-section {
-      width: 100%;
-      padding: 10px;
-      background-color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .upgrade-plan, .profile-details {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      padding: 10px;
-      border-top: 1px solid #ccc;
-    }
-
-    .upgrade-icon, .more-options {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: #ccc;
-      margin-right: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .user-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #ccc;
-      margin-right: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Chat App - Version 1.0</title>
 </head>
+
 <body>
-  <div class="left-pane">
-    <div class="top-header">
-      <div class="plus-icon">
-        <svg fill="none" class="icon-sm shrink-0" viewBox="0 0 16 16">
-          <path d="m5.854 5.735.692-2.074a.479.479 0 0 1 .908 0l.692 2.074a3.35 3.35 0 0 0 2.119 2.12l2.074.69a.479.479 0 0 1 0 .91l-2.074.69a3.35 3.35 0 0 0-2.12 2.12l-.691 2.074a.479.479 0 0 1-.908 0l-.692-2.074a3.35 3.35 0 0 0-2.119-2.12l-2.074-.69a.479.479 0 0 1 0-.91l2.074-.69a3.35 3.35 0 0 0 2.12-2.12ZM11.46 2.464l.326-.977a.225.225 0 0 1 .428 0l.325.977c.157.47.527.84.997.997l.977.325a.225.225 0 0 1 0 .428l-.977.325c-.47.157-.84.527-.997.997l-.325.977a.225.225 0 0 1-.428 0l-.325-.977a1.577 1.577 0 0 0-.998-.997l-.976-.325a.225.225 0 0 1 0-.428l.976-.325c.471-.157.84-.527.998-.997Z" fill="currentColor"></path>
-        </svg>
-      </div>
-      <div class="new-chat">New Chat</div>
-      <div class="close-sidebar">X</div>
-    </div>
-    <div class="list-of-chat-items">
-      <div class="chat-item">
-        <div class="chat-icon"></div>
-        <div class="chat-title">Chat 1</div>
-      </div>
-      <div class="chat-item">
-        <div class="chat-icon"></div>
-        <div class="chat-title">Chat 2</div>
-      </div>
-      <!-- Add more chat items here -->
-    </div>
-    <div class="profile-section">
-      <div class="upgrade-plan">
-        <div class="upgrade-icon">
-          <svg fill="none" class="icon-sm shrink-0" viewBox="0 0 16 16">
-            <path d="m5.854 5.735.692-2.074a.479.479 0 0 1 .908 0l.692 2.074a3.35 3.35 0 0 0 2.119 2.12l2.074.69a.479.479 0 0 1 0 .91l-2.074.69a3.35 3.35 0 0 0-2.12 2.12l-.691 2.074a.479.479 0 0 1-.908 0l-.692-2.074a3.35 3.35 0 0 0-2.119-2.12l-2.074-.69a.479.479 0 0 1 0-.91l2.074-.69a3.35 3.35 0 0 0 2.12-2.12ZM11.46 2.464l.326-.977a.225.225 0 0 1 .428 0l.325.977c.157.47.527.84.997.997l.977.325a.225.225 0 0 1 0 .428l-.977.325c-.47.157-.84.527-.997.997l-.325.977a.225.225 0 0 1-.428 0l-.325-.977a1.577 1.577 0 0 0-.998-.997l-.976-.325a.225.225 0 0 1 0-.428l.976-.325c.471-.157.84-.527.998-.997Z" fill="currentColor"></path>
-          </svg>
+    <div class="container">
+        <div class="sidebar">
+            <div class="top_header_section">
+                <button class="new_chat_button">+ New Chat</button>
+                <button class="close_sidebar_button" onclick="toggleSidebar()">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon-sm" height="1em" width="1em"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="3" x2="9" y2="21"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="chat_history_widgets_section">
+                <!-- Within the .chat_history_widgets_section -->
+            </div>
+            <!-- Within the .sidebar, above the .profile_section -->
+            <!-- Within the .sidebar -->
+
+            <div class="profile_section">
+                <div class="divider"></div>
+                <div class="upgrade_section">
+                    <label>
+                        <span class="upgrade-icon">⇧</span>
+                        Upgrade
+                    </label>
+                </div>
+                <div class="account_section">
+                    <!-- You can add user account details here -->
+                    <!-- Within the .account_section -->
+                    <!-- Within the .account_section -->
+                    <div class="profile-picture">
+                        <div class="initials-box">JD</div>
+                    </div>
+                    <div class="user-info">
+                        <p class="user-name">John Doe</p>
+                    </div>
+                    <div class="menu-icon">
+                        <span>&#8226;&#8226;&#8226;</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="upgrade-label">Upgrade Plan</div>
-      </div>
-      <div class="profile-details">
-        <!-- ... Rest of the profile details ... -->
-      </div>
+        <div class="main_section">
+            <!-- Chat messages go here -->
+            <div class="floating_buttons">
+                <button class="gpt35_button">GPT-3.5</button>
+                <button class="gpt4_button">GPT-4</button>
+            </div>
+            <div class="messages_section">
+                <!-- Message cards go here -->
+            </div>
+            <div class="input-section">
+                <div class="message-input-container">
+                    <textarea class="message-input" placeholder="Send a message"></textarea>
+                    <div class="send-icon" onclick="">&#9658;</div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="right-pane">
-    <!-- Right pane content goes here -->
-  </div>
 </body>
+
 </html>

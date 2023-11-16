@@ -1,0 +1,297 @@
+/* Use the same font for the entire webpage */
+body,
+button,
+label,
+p,
+textarea {
+    font-family: Arial, sans-serif;
+    /* Use Arial or your preferred font */
+}
+
+body,
+html {
+    overflow-y: hidden;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+/* Set the border and divider to very light grey color */
+.divider {
+    border-top: 1px solid #f2f2f2;
+    /* Very light grey color */
+    margin-top: 15px;
+    /* Increase the margin */
+    margin-bottom: 10px;
+}
+
+/* Styles for the sidebar */
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 0;
+}
+
+.top_header_section {
+    height: 10%;
+    background-color: black;
+    text-align: left;
+    border-top-right-radius: 0;
+}
+
+.new_chat_button {
+    width: 70%;
+    background-color: black;
+    border: 1px solid #f2f2f2;
+    /* Very light grey border */
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    /* Slightly more visible rounded corners */
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    height: 40px;
+}
+
+.close_sidebar_button {
+    width: 20%;
+    background-color: black;
+    border: 1px solid #f2f2f2;
+    /* Very light grey border */
+    padding: 5px;
+    border-radius: 5px;
+    /* Slightly more visible rounded corners */
+    color: white;
+    font-size: 16px;
+    height: 40px;
+}
+
+/* Styles for the profile_section */
+.profile_section {
+    background-color: black;
+    padding: 10px;
+    color: white;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upgrade_section {
+    text-align: left;
+    margin-bottom: 15px;
+    /* Increase the margin */
+}
+
+/* Style the initials box */
+.initials-box {
+    background-color: orange;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-right: 10px;
+    /* Add spacing between the initials box and user-name */
+}
+
+/* Style the three dots menu icon and align it to the right */
+.menu-icon {
+    font-size: 20px;
+    /* Adjust the size as needed */
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+    /* Push the menu icon to the right */
+}
+
+/* Adjust the spacing between the user-name and menu icon */
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+/* Align the user info to the right in the profile_section */
+.account_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styles for chat history widgets section */
+.chat_history_widgets_section {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the start of the container */
+    /* Other styles for the chat history widgets section */
+}
+
+
+
+/* Styles for a single chat history widget item */
+.single_chat_history_widget {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect */
+    padding: 4px;
+    /* Add padding to all four sides */
+    border-radius: 8px;
+    /* Add rounded borders */
+}
+
+/* Hover effect styles */
+.single_chat_history_widget:hover {
+    background-color: rgba(242, 242, 242, 0.3);
+    /* Slightly lighter background color with opacity */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+}
+
+/* Styles for the chat icon */
+.chat_icon {
+    margin-right: 8px;
+    /* Adjust the space between icon and title */
+}
+
+/* Styles for the chat title */
+.chat_title {
+    margin-right: 8px;
+    /* Styles for the chat title text */
+}
+
+/* Styles for the edit and delete options */
+.edit_delete_options {
+    position: relative;
+    display: none;
+    /* Initially hide options */
+}
+
+.single_chat_history_widget:hover .edit_delete_options {
+    display: flex;
+    /* Display options on hover */
+}
+
+.edit_option,
+.delete_option {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+    /* Adjust spacing */
+    display: none;
+    /* Initially hide options */
+}
+
+/* Display options on hover */
+.single_chat_history_widget:hover .edit_option,
+.single_chat_history_widget:hover .delete_option {
+    display: inline-block;
+    /* Display options on hover */
+}
+
+/* Styles for the main_section */
+.main_section {
+    flex: 1;
+    padding: 20px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 80%;
+    overflow-y: auto; /* Allow overflow content to be scrollable */
+}
+
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message-input-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #f2f2f2;
+    /* Very light grey border */
+    border-radius: 10px;
+    /* Slightly more visible rounded corners */
+    overflow-y: hidden;
+    font-size: 16px;
+}
+
+.send-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    /* Increased the size of the arrowhead icon */
+    cursor: pointer;
+    color: black;
+}
+
+/* Styles for the floating_buttons section */
+.floating_buttons {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1; /* Ensure the buttons overlay other elements */
+    padding: 10px 0; /* Add padding for spacing */
+}
+
+.gpt35_button,
+.gpt4_button {
+    padding: 8px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    /* Other styles for buttons */
+}
+
+/* Styles for the messages_section */
+.messages_section {
+    flex-grow: 1; /* Occupy remaining space */
+    padding: 10px;
+}
+
+/* Card-like styles for each message */
+.message-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* Other styles for message cards */
+}
+
+/* Alternate background colors for message cards */
+.message-card:nth-child(even) {
+    background-color: #f2f2f2;
+}
